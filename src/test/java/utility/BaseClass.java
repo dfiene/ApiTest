@@ -50,7 +50,7 @@ public class BaseClass {
         RequestSpecification request = RestAssured.given();
         request.header("Content-Type", "application/json");
         JSONObject requestParams = new JSONObject();
-        requestParams.put("acres", "dustin fiene");
+        requestParams.put("acres", acres);
         requestParams.put("farm_name", farmName);
         request.body(requestParams.toString());
         Response response = request.post("");
@@ -58,7 +58,6 @@ public class BaseClass {
         System.out.println("Actual status code : " + StatusCode);
         System.out.println("Status code Expected: " + statusCodeExpected);
         Assert.assertTrue(statusCodeExpected == (StatusCode));
-
 
 
     }
@@ -89,7 +88,6 @@ public class BaseClass {
         System.out.println("Actual status code : " + StatusCode);
         System.out.println("Status code Expected: " + statusCodeExpected);
         Assert.assertTrue(statusCodeExpected == (StatusCode));
-
 
 
     }
